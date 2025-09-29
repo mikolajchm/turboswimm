@@ -1,0 +1,42 @@
+.hero {
+  background: url("../files/hero-bg.jpg") center/cover no-repeat fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.logoBox {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 150px;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}
