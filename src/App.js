@@ -8,6 +8,8 @@ import Statute from "./sections/Statute";
 import Gallery from "./sections/Gallery";
 import Locations from "./sections/Locations";
 import Pricelist from "./sections/Pricelist";
+import Contact from "./sections/Contact";
+
 
 import "./styles/global.scss";
 
@@ -18,6 +20,7 @@ function App() {
       <Hero />
       <Instructors />
       <Gallery />
+      <Contact />
       <Locations />
       <Footer />
     </div>

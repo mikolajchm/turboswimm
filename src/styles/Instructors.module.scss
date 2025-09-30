@@ -1,25 +1,110 @@
+@font-face {
+  font-family: 'Pricedown';
+  src: url('../files/fonts/Pricedown.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .instructors {
-  padding: 80px 0;
-  color: white;
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
-}
+  position: relative;
+  padding: 5rem 2rem;
+  background: rgba(0, 0, 0, 0.6); // lekko przydymione tło
+  color: #fff;
 
-.instructorImg {
-  border-radius: 10px;
-  max-height: 400px;
-  object-fit: cover;
-}
-
-.desc {
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  .desc {
+  h2 {
+    font-family: 'Pricedown', sans-serif;
+    font-size: 3rem;
     text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
   }
 
-  .instructorImg {
-    margin-bottom: 20px;
+  .carousel-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    .row {
+      width: 100%;
+      align-items: center;
+    }
+
+    .instructorImg {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
+    }
+
+    .desc {
+      padding: 2rem;
+      h3 {
+        font-family: 'Pricedown', sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  // Strzałki karuzeli po bokach
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    span {
+      background-color: rgba(0, 170, 255, 0.8);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .carousel-control-prev {
+    left: 0;
+  }
+
+  .carousel-control-next {
+    right: 0;
+  }
+}
+
+// Responsywność
+@media (max-width: 768px) {
+  .instructors {
+    padding: 3rem 1rem;
+
+    .desc {
+      padding: 1rem;
+      h3 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 }

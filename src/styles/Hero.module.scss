@@ -1,41 +1,100 @@
+@font-face {
+  font-family: 'Pricedown';
+  src: url('../files/fonts/Pricedown.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hero {
+  position: relative;
+  width: 100%;
   height: 100vh;
+  background: url('../files/bb.jpg') center center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
-}
+  overflow: hidden;
 
-.logoBox {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2rem 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0, 170, 255, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); // przyciemnienie tła
+    z-index: 1;
+  }
 
-.logo {
-  width: 200px;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-  margin-bottom: 1rem;
-}
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
 
-.subtitle {
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #fff;
+    .logoBox {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+
+      .logo {
+        width: 250px;
+        max-width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 0 25px rgba(0, 170, 255, 0.6);
+      }
+    }
+
+    .textBox {
+      flex: 2;
+      display: flex;
+      justify-content: flex-end;
+      text-align: right;
+
+      .title {
+        font-family: 'Pricedown', sans-serif;
+        font-size: 5rem;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(0,0,0,0.7);
+        line-height: 1.1;
+
+        @media (max-width: 992px) {
+          font-size: 3.5rem;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+          text-align: center;
+        }
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-top: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
-  .logo {
-    width: 150px;
-  }
-  .subtitle {
-    font-size: 1rem;
+  .hero .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .logoBox {
+      margin-bottom: 2rem;
+    }
+
+    .textBox {
+      justify-content: center;
+    }
   }
 }
