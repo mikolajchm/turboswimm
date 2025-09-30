@@ -20,35 +20,40 @@ const Navbar = () => {
   return (
     <motion.nav
       className={styles.navbar}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      initial={{ y: -120, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className={styles.logoBox}>
-        <img src={logo} alt="Logo firmy" className={styles.logo} />
-      </div>
+      <div className={styles.navContent}>
+        <div className={styles.logoBox}>
+          <img src={logo} alt="Logo firmy" className={styles.logo} />
+        </div>
 
-      <div className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
-      </div>
+        <ul className={`${styles.menu} ${isOpen ? styles.active : ""}`}>
+          {menuItems.map((item, idx) => (
+            <li key={idx}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-      <ul className={`${styles.menu} ${isOpen ? styles.active : ""}`}>
-        {menuItems.map((item, idx) => (
-          <li key={idx}>
-            <Link
-              to={item.to}
-              smooth={true}
-              duration={500}
-              offset={-80} // odliczamy wysokość navbaru
-              onClick={() => setIsOpen(false)} // zamyka menu po kliknięciu
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <div
+          className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
     </motion.nav>
   );
 };

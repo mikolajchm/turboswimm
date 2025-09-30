@@ -1,0 +1,44 @@
+.footer {
+  width: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+  box-shadow: inset 0 5px 15px rgba(0,0,0,0.3);
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: #d0d0d0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+
+    .logo {
+      width: 60px;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}

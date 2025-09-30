@@ -19,6 +19,7 @@ function App() {
       <Instructors />
       <Gallery />
       <Locations />
+      <Footer />
     </div>
   );
 }

@@ -1,35 +1,44 @@
 .galeria {
-  background: url("../files/hero-bg.jpg") center/cover no-repeat fixed;
-  padding: 5rem 2rem;
+  background: rgba(65, 24, 24, 0.5); // półprzezroczyste tło
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
   text-align: center;
-  color: white;
-}
+  color: #fff;
 
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
+  .title {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px #000;
+  }
 
-.slide img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
-}
+  .carouselWrapper {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 
-@media (max-width: 768px) {
-  .slide img {
-    max-height: 300px;
+    img {
+      object-fit: cover;
+      max-height: 500px;
+    }
   }
 }
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
-section {
-  width: 100%;
-  overflow: hidden; // opcjonalnie
+// Responsywność
+@media (max-width: 768px) {
+  .galeria {
+    .title {
+      font-size: 28px;
+    }
+
+    .carouselWrapper img {
+      max-height: 300px;
+    }
+  }
 }
